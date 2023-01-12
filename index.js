@@ -30,30 +30,19 @@ function createMeteoCard(data) {
   meteoCard.className = "meteo-card";
   meteoCard.innerHTML = `
     <div class="meteo-location-wrapper">
-      <h3 class="location-data">${data.location.name}</h3>
+      <h3 class="location-city">${data.location.name}</h3>
       <p class="location-dateTime">${data.location.localtime}</p>
       <div class="location-data">
-        <p>${data.location.region}</p>
+        <p>${data.location.region}, </p>
         <p>${data.location.country}</p>
       </div>
     </div>
     <div class="meteo-data">
       <p class="temperature">${data.current.temp_c}° C</p>
-      <div class="condition-wrapper">
-        <p class="condition-text">${data.current.condition.text}</p>
-        <img class="condition-icon" src="${data.current.condition.icon}">
-      </div>
+      <p class="condition-text">${data.current.condition.text}</p>
+      <img class="condition-icon" src="${data.current.condition.icon}">
     </div>
   `;
-
-  // map = new google.maps.Map(document.getElementById("map"), {
-  //   center: { lat: data.location.lat, lng: data.location.lon },
-  //   zoom: 13,
-  // });
-  // const marker = new google.maps.Marker({
-  //   position: position,
-  //   map: map,
-  // });
 
   dataWrapper.appendChild(meteoCard);
 }

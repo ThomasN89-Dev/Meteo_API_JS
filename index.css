@@ -9,12 +9,6 @@ body {
 }
 
 .meteo-app {
-  /* background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18); */
   height: 100%;
   padding: 8px 16px;
 }
@@ -66,6 +60,46 @@ body {
   font-size: 16px;
 }
 
+/* meteo section style */
+.meteo-app .data-wrapper {
+  margin-top: 16px;
+}
+
+.meteo-app .data-wrapper .meteo-card {
+  width: 75%;
+  margin: 0 auto;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.meteo-app .data-wrapper .meteo-card h3,
+.meteo-app .data-wrapper .meteo-card p {
+  margin: 0;
+}
+
+.meteo-app .data-wrapper .meteo-card .meteo-location-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meteo-app .data-wrapper .meteo-card .meteo-location-wrapper .location-data {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meteo-app .data-wrapper .meteo-card .meteo-data {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* forecast section style */
 .meteo-app .data-wrapper .forecast-card .forecast-hours-wrapper {
   display: flex;
   flex-wrap: nowrap;
