@@ -62,25 +62,11 @@ function displayForecast() {
     });
 }
 
-function createForecastCard(data, x) {
-  const forecastCard = document.createElement("div");
-  forecastCard.className = "forecast-card";
-  forecastCard.innerHTML = `
-    <div class="meteo-location-wrapper">
-      <h3 class="location-data">${data.date}</h3>
-    </div>
-  `;
-
-  dataWrapper.appendChild(forecastCard);
-}
-
 function createForecastCard(data) {
   const forecastCard = document.createElement("div");
   forecastCard.className = "forecast-card";
   forecastCard.innerHTML = `
-    <div class="forecast-wrapper">
       <h3 class="forecast-data">${data.date}</h3>
-    </div>
   `;
 
   const hoursWrapper = document.createElement("div");
@@ -93,10 +79,12 @@ function createForecastCard(data) {
     dayHour.innerHTML = `
       <p class='hour'>${hour.time}</p>
       <div class='condition-wrapper'>
-        <span class='condition'>${hour.condition.text}</span>
+        <div>
+          <span class='temperature'>${hour.temp_c}° C</span>
+          <span class='condition'>${hour.condition.text}</span>
+        </div>
         <img src='${hour.condition.icon}' />
       </div>
-      <p class='temperature'>${hour.temp_c}° C</p>
     `;
 
     hoursWrapper.appendChild(dayHour);

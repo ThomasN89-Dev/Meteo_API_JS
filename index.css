@@ -9,7 +9,6 @@ body {
 }
 
 .meteo-app {
-  height: 100%;
   padding: 8px 16px;
 }
 
@@ -75,11 +74,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.42);
 }
 
-.meteo-app .data-wrapper .meteo-card h3,
-.meteo-app .data-wrapper .meteo-card p {
-  margin: 0;
-}
-
 .meteo-app .data-wrapper .meteo-card .meteo-location-wrapper {
   display: flex;
   flex-direction: column;
@@ -100,6 +94,14 @@ body {
 }
 
 /* forecast section style */
+.meteo-app .data-wrapper .forecast-card {
+  margin-top: 16px;
+}
+
+.meteo-app .data-wrapper .forecast-card .forecast-data {
+  margin-bottom: 8px;
+}
+
 .meteo-app .data-wrapper .forecast-card .forecast-hours-wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -107,16 +109,51 @@ body {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   gap: 16px;
+  padding-bottom: 10px;
 }
 
 .meteo-app .data-wrapper .forecast-card .forecast-hours-wrapper .forecast-hour {
   flex: 0 0 auto;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  padding: 8px;
+  overflow: hidden;
 }
 
-#map {
-  height: 400px;
+.meteo-app
+  .data-wrapper
+  .forecast-card
+  .forecast-hours-wrapper
+  .forecast-hour
+  .hour {
+  margin-left: -87px;
 }
 
+.meteo-app
+  .data-wrapper
+  .forecast-card
+  .forecast-hours-wrapper
+  .forecast-hour
+  .condition-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.meteo-app
+  .data-wrapper
+  .forecast-card
+  .forecast-hours-wrapper
+  .forecast-hour
+  .condition-wrapper
+  > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* fonts and root styles */
 @font-face {
   font-family: "font_regular";
   src: url("./assets/Kanit-Medium.ttf") format("truetype");
@@ -124,4 +161,12 @@ body {
 
 :root {
   --color-background: #4285dd;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
 }
