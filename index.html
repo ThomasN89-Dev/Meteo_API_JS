@@ -3,12 +3,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <title>Meteo App</title>
   </head>
   <body>
-    <input type="text" id="user-input" />
-    <button onclick="inputData()">send</button>
-    <div class="data-wrapper"></div>
+    <div class="meteo-app">
+      <h1 class="app-title">Tondo's Meteo App</h1>
+      <div class="search-wrapper">
+        <input type="text" id="user-input" />
+        <button onclick="inputData()" class="search-button">Search</button>
+      </div>
+      <div class="data-wrapper"></div>
+      <!-- <div id="map"></div> -->
+    </div>
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBneHm5ALGDULGnLqRPRUl1yw006fAIcoA&callback=initMap&v=weekly"
+      defer
+    ></script> -->
     <script src="index.js"></script>
   </body>
 </html>
