@@ -6,6 +6,7 @@ body {
   height: 100vh;
   /* overflow: hidden; */
   background-color: var(--color-background);
+  color: var(--text-primary);
 }
 
 .meteo-app {
@@ -74,6 +75,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.42);
 }
 
+.meteo-app .data-wrapper .meteo-card .location-city {
+  font-size: 26px;
+  text-align: center;
+}
+
 .meteo-app .data-wrapper .meteo-card .meteo-location-wrapper {
   display: flex;
   flex-direction: column;
@@ -127,15 +133,6 @@ body {
   .forecast-card
   .forecast-hours-wrapper
   .forecast-hour
-  .hour {
-  margin-left: -87px;
-}
-
-.meteo-app
-  .data-wrapper
-  .forecast-card
-  .forecast-hours-wrapper
-  .forecast-hour
   .condition-wrapper {
   display: flex;
   align-items: center;
@@ -153,14 +150,28 @@ body {
   flex-direction: column;
 }
 
+/* error message */
+.data-wrapper .error-msg {
+  font-family: "heading_font";
+  font-size: 26px;
+  font-style: italic;
+}
+
 /* fonts and root styles */
 @font-face {
   font-family: "font_regular";
-  src: url("./assets/Kanit-Medium.ttf") format("truetype");
+  src: url("./assets/Lato-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "heading_font";
+  src: url("./assets/Lato-Bold.ttf") format("truetype");
 }
 
 :root {
   --color-background: #4285dd;
+  --error-red: #a30000;
+  --text-primary: #14133b;
 }
 
 p,
