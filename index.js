@@ -9,7 +9,9 @@ function inputData() {
   userInput = userInputField.value;
   userInputField.value = "";
   displayDatas();
-  displayForecast();
+  setTimeout(() => {
+    displayForecast();
+  }, 200);
 }
 
 function displayDatas() {
@@ -59,7 +61,7 @@ function createMeteoCard(data) {
 }
 
 function displayForecast() {
-  fetch(`${api}/forecast.json?key=${API_KEY}&q=${userInput}&days=3&aqi=no`)
+  fetch(`${api}/forecast.json?key=${API_KEY}&q=${userInput}&days=5&aqi=no`)
     // .then((x) => x.text())
     // .then((y) => (data = y))
     // .then(() => {
@@ -73,6 +75,7 @@ function displayForecast() {
       return res.json();
     })
     .then((forecastData) => {
+      console.log(forecastData);
       let forecastDays = forecastData.forecast.forecastday;
       forecastDays.forEach((day) => {
         createForecastCard(day);

@@ -73,6 +73,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.42);
+  margin-bottom: 16px;
 }
 
 .meteo-app .data-wrapper .meteo-card .location-city {
@@ -101,7 +102,8 @@ body {
 
 /* forecast section style */
 .meteo-app .data-wrapper .forecast-card {
-  margin-top: 16px;
+  padding: 16px 0;
+  border-top: 1px solid #f9f9f9;
 }
 
 .meteo-app .data-wrapper .forecast-card .forecast-data {
