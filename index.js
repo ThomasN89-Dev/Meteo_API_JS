@@ -3,6 +3,7 @@ userInput = "";
 const API_KEY = "61b658c4b0d844b4b2984312231001";
 const dataWrapper = document.querySelector(".data-wrapper");
 let map;
+const api = "http://api.weatherapi.com/v1";
 
 function inputData() {
   userInput = userInputField.value;
@@ -13,9 +14,7 @@ function inputData() {
 
 function displayDatas() {
   dataWrapper.innerHTML = "";
-  fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${userInput}&aqi=no`
-  )
+  fetch(`${api}/current.json?key=${API_KEY}&q=${userInput}&aqi=no`)
     // .then((res) => {
     //   if (res.status === 400) {
     //     const errorMsg = document.createElement("p");
@@ -60,9 +59,7 @@ function createMeteoCard(data) {
 }
 
 function displayForecast() {
-  fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${userInput}&days=3&aqi=no`
-  )
+  fetch(`${api}/forecast.json?key=${API_KEY}&q=${userInput}&days=3&aqi=no`)
     .then((x) => x.text())
     .then((y) => (data = y))
     .then(() => {
