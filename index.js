@@ -15,24 +15,24 @@ function inputData() {
 function displayDatas() {
   dataWrapper.innerHTML = "";
   fetch(`${api}/current.json?key=${API_KEY}&q=${userInput}&aqi=no`)
-    // .then((res) => {
-    //   if (res.status === 400) {
-    //     const errorMsg = document.createElement("p");
-    //     errorMsg.className = "error-msg";
-    //     errorMsg.textContent = "No location found. Try again";
-    //     dataWrapper.appendChild(errorMsg);
-    //   }
-    //   return res.json();
-    // })
-    // .then((data) => {
-    //   createMeteoCard(data);
-    // });
-    .then((x) => x.text())
-    .then((y) => (data = y))
-    .then(() => {
-      let dataParsable = JSON.parse(data);
-      createMeteoCard(dataParsable);
+    .then((res) => {
+      if (res.status === 400) {
+        const errorMsg = document.createElement("p");
+        errorMsg.className = "error-msg";
+        errorMsg.textContent = "No location found. Try again";
+        dataWrapper.appendChild(errorMsg);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      createMeteoCard(data);
     });
+  // .then((x) => x.text())
+  // .then((y) => (data = y))
+  // .then(() => {
+  //   let dataParsable = JSON.parse(data);
+  //   createMeteoCard(dataParsable);
+  // });
 }
 
 function createMeteoCard(data) {
@@ -60,24 +60,24 @@ function createMeteoCard(data) {
 
 function displayForecast() {
   fetch(`${api}/forecast.json?key=${API_KEY}&q=${userInput}&days=3&aqi=no`)
-    .then((x) => x.text())
-    .then((y) => (data = y))
-    .then(() => {
-      let forecastData = JSON.parse(data);
+    // .then((x) => x.text())
+    // .then((y) => (data = y))
+    // .then(() => {
+    //   let forecastData = JSON.parse(data);
+    //   let forecastDays = forecastData.forecast.forecastday;
+    //   forecastDays.forEach((day) => {
+    //     createForecastCard(day);
+    //   });
+    // });
+    .then((res) => {
+      return res.json();
+    })
+    .then((forecastData) => {
       let forecastDays = forecastData.forecast.forecastday;
       forecastDays.forEach((day) => {
         createForecastCard(day);
       });
     });
-  // .then((res) => {
-  //   return res.json();
-  // })
-  // .then((forecastData) => {
-  //   let forecastDays = forecastData.forecast.forecastday;
-  //   forecastDays.forEach((day) => {
-  //     createForecastCard(day);
-  //   });
-  // });
 }
 
 function createForecastCard(data) {
