@@ -3,7 +3,7 @@ userInput = "";
 const API_KEY = "61b658c4b0d844b4b2984312231001";
 const dataWrapper = document.querySelector(".data-wrapper");
 let map;
-const api = "http://api.weatherapi.com/v1";
+const api = "https://api.weatherapi.com/v1";
 
 function inputData() {
   userInput = userInputField.value;
